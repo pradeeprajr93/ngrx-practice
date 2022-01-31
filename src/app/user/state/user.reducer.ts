@@ -16,10 +16,14 @@ export const getMaskUserName = createSelector(
     state => state.maskUserName
 );
 
+export const toggleMaskUserName = createAction('[User] Toggle mask user name');
+
 export const userReducer = createReducer<UserState>(
     {
         maskUserName: false
     }, 
-    on(createAction('[User] Toggle mask user name'), 
-    state => ({...state, maskUserName: !state.maskUserName}))
+    on(
+        toggleMaskUserName, 
+        state => ({...state, maskUserName: !state.maskUserName})
+    )
 );

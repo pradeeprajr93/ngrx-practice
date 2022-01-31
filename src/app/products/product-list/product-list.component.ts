@@ -1,4 +1,4 @@
-import { getShowProductCode } from './../state/product.reducer';
+import { getShowProductCode, toggleProductCode } from './../state/product.reducer';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 
@@ -46,7 +46,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   checkChanged(): void {
-    this.store.dispatch({type: '[Product] Toggle Product Code'});
+    this.store.dispatch(toggleProductCode());
   }
 
   newProduct(): void {

@@ -1,4 +1,4 @@
-import { getMaskUserName } from './state/user.reducer';
+import { getMaskUserName, toggleMaskUserName } from './state/user.reducer';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   checkChanged(): void {
-    this.store.dispatch({type: '[User] Toggle mask user name'});
+    this.store.dispatch(toggleMaskUserName());
   }
 
   login(loginForm: NgForm): void {

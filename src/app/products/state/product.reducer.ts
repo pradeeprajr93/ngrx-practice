@@ -25,9 +25,11 @@ export const getShowProductCode = createSelector(getProductFeatureSelector, stat
 export const getProducts = createSelector(getProductFeatureSelector, state => state.products);
 export const getSelectedProduct = createSelector(getProductFeatureSelector, state => state.selectedProduct);
 
+export const toggleProductCode = createAction('[Product] Toggle Product Code');
+
 export const productReducer = createReducer<ProductState>(
     initialState,
-    on(createAction('[Product] Toggle Product Code'), (state): ProductState => {
+    on(toggleProductCode, (state): ProductState => {
         return {
             ...state,
             showProductCode: !state.showProductCode
