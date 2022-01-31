@@ -1,4 +1,4 @@
-import { getShowProductCode, toggleProductCode } from './../state/product.reducer';
+import { getShowProductCode } from './../state/product.reducer';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 
@@ -7,6 +7,7 @@ import { Subscription, Observable } from 'rxjs';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 import { ProductState, State } from '../state/product.reducer';
+import { toggleProductCode } from '../state/product.action';
 
 @Component({
   selector: 'pm-product-list',

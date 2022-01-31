@@ -1,4 +1,4 @@
-import { getMaskUserName, toggleMaskUserName } from './state/user.reducer';
+import { getMaskUserName } from './state/user.reducer';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 
 import { AuthService } from './auth.service';
 import { Store } from '@ngrx/store';
+import { toggleMaskUserName } from './state/user.action';
 
 @Component({
   templateUrl: './login.component.html',
